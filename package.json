@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/ada-lovecraft/formium/issues"
   },
-  "homepage": "https://github.com/ada-lovecraft/formium#readme"
+  "homepage": "https://github.com/ada-lovecraft/formium#readme",
+  "devDependencies": {
+    "got": "^12.6.0"
+  }
 }
