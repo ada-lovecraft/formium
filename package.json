@@ -1,5 +1,10 @@
 {
+  "name": "formium",
+  "version": "1.0.0",
+  "description": "A brief description of what this project does and who it's for",
+  "main": "index.js",
   "dependencies": {
+    "@prisma/client": "^4.13.0",
     "ava": "^5.2.0",
     "body-parser": "^1.20.2",
     "compression": "^1.7.4",
@@ -7,5 +12,18 @@
     "debug": "^4.3.4",
     "express": "^4.18.2",
     "prisma": "^4.13.0"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ada-lovecraft/formium.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ada-lovecraft/formium/issues"
+  },
+  "homepage": "https://github.com/ada-lovecraft/formium#readme"
 }
