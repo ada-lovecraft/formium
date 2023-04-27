@@ -1,13 +1,19 @@
+// Datasource
 datasource db {
   provider = "sqlite"
   url = env("DATABASE_FILE")
 }
+generator client {
+  provider = "prisma-client-js"
+}
+
+
 
 model Site {
   @@map("construction_site")
   id String @id @default(uuid())
-  name String?
   materials SiteMaterial[]
+  name String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -15,11 +21,13 @@ model Site {
 model SiteMaterial {
   @@map("construction_site_material")
   id Int @id @default(autoincrement())
-  site Site @relation(fields: [siteId], references: [id])
+  site Site @relation(fields: [siteId], references: [id], onDelete: Cascade)
   siteId String @map("site_id") 
   name String?
   amount Float
   price Float
   color String
-  deliveryDate DateTime?
+  deliveryDate DateTime? @map("delivery_date")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
