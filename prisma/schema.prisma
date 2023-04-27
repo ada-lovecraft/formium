@@ -4,8 +4,22 @@ datasource db {
 }
 
 model Site {
+  @@map("construction_site")
   id String @id @default(uuid())
-  name String
+  name String?
+  materials SiteMaterial[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model SiteMaterial {
+  @@map("construction_site_material")
+  id Int @id @default(autoincrement())
+  site Site @relation(fields: [siteId], references: [id])
+  siteId String @map("site_id") 
+  name String?
+  amount Float
+  price Float
+  color String
+  deliveryDate DateTime?
 }
