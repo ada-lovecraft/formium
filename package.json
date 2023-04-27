@@ -4,19 +4,9 @@
   "description": "A brief description of what this project does and who it's for",
   "main": "index.js",
   "type": "module",
-  "dependencies": {
-    "@prisma/client": "^4.13.0",
-    "ava": "^5.2.0",
-    "body-parser": "^1.20.2",
-    "compression": "^1.7.4",
-    "cors": "^2.8.5",
-    "debug": "^4.3.4",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "prisma": "^4.13.0"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx ava",
+    "reset-dev": "prisma migrate reset --force && prisma migrate dev --name init"
   },
   "repository": {
     "type": "git",
@@ -28,7 +18,31 @@
     "url": "https://github.com/ada-lovecraft/formium/issues"
   },
   "homepage": "https://github.com/ada-lovecraft/formium#readme",
+  "dependencies": {
+    "@prisma/client": "^4.13.0",
+    "ava": "^5.2.0",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "lamby-chan": "^1.0.0",
+    "prisma": "^4.13.0",
+    "proxyquire": "^2.1.3",
+    "yoctocolors": "^1.0.0"
+  },
   "devDependencies": {
-    "got": "^12.6.0"
+    "@faker-js/faker": "^7.6.0",
+    "chance": "^1.1.11",
+    "got": "^12.6.0",
+    "log-update": "^5.0.1",
+    "supports-color": "^9.3.1"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "ava": {
+    "verbose": true
   }
 }
